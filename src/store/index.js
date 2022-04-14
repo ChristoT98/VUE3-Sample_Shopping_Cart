@@ -17,6 +17,9 @@ export default createStore({
       }else {
         return null
       }
+    },
+    cartItems : state => {
+      return state.cart
     }
   },
   mutations: {
