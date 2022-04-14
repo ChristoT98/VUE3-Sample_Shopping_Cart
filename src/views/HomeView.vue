@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="product-cards-container">
-        <ProductCard v-for="item in items" :key="item.id" :item="item" />
+        <ProductCard v-for="item in items" :key="item.id" :item="item" @view-item="viewItem($event)" />
     </div>
     
   </div>
@@ -19,6 +19,13 @@ export default {
   data() {
     return {
       items: itemData,
+      item: null
+    }
+  },
+  methods: {
+    viewItem (item) {
+      this.item = item
+      console.log(this.item)
     }
   },
 }

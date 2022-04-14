@@ -4,7 +4,7 @@
         <h5 class="price">${{item.price.toFixed(2)}}</h5>
         <p class="description">Description: {{ description }}...</p>
         <p class="category">{{item.category}}</p>
-        <button class="btn-view-item">View Details</button>
+        <button class="btn-view-item" @click="$emit('view-item', item)">View Details</button>
     </div>
 </template>
 
