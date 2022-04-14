@@ -25,7 +25,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .product-card {
         width: 450px;
         height: auto;
@@ -47,7 +47,10 @@
             color: gray;
         }
 
-        button.btn-view-item {
+        
+    }
+
+    button.btn-view-item {
             padding: 10px;
             background-color: rgb(4, 4, 99);
             border: none;
@@ -56,7 +59,6 @@
             border-radius: 2px;
             cursor: pointer;
         }
-    }
 
     @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
         .product-card {

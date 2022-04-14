@@ -24,7 +24,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .card {
         width: 80%;
         height: auto;
