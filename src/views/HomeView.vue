@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ItemDescriptionComponent :item="item" :active="active.item_drawer" />
+    <ItemDescriptionComponent :item="item" :active="active.item_drawer" @close-item-drawer="closeDrawer()" />
     <div class="product-cards-container">
         <ProductCard v-for="item in items" :key="item.id" :item="item" @view-item="viewItem($event)" />
     </div>
@@ -31,7 +31,9 @@ export default {
     viewItem (item) {
       this.item = item
       this.active.item_drawer = true
-      console.log(this.item)
+    },
+    closeDrawer () {
+      this.active.item_drawer = false
     }
   },
 }

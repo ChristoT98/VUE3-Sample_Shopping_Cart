@@ -13,8 +13,8 @@
                 <h4>{{ item_total }}</h4>
             </div>
             <div class="btn-container">
-                <button class="remove">-</button>
-                <button class="add">+</button>
+                <button class="remove" @click="removeFromCart()">-</button>
+                <button class="add" @click="addToCart()">+</button>
             </div>
         </div>
     </div>
@@ -23,12 +23,19 @@
 <script>
     export default {
         props: ['item', 'active'],
+        methods: {
+            addToCart() {
+                this.$store.commit('addToCart', this.item)
+            },
+            removeFromCart() {
+                this.$store.commit('removeFromCart', this.item)
+            }
+        },
         computed: {
             item_total () {
-                return 56.00
-                //return this.items.reduce((total, currentItem) => (total = total + currentItem),0)
+                return this.$store.getters.productQuentity(this.item) 
             }
-        }
+        },
     }
 </script>
 
